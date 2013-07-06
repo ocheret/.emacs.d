@@ -1,0 +1,15 @@
+*~
+*.swp
+.DS_Store
+*.o
+*.pyc
+*.elc
+make.out.*
+*.zip
+*.png
+*.gif
+*.jpg
+*.ppm
+tmp/
+Build/
+auto-save-list/
