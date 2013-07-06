@@ -1,7 +1,7 @@
 (setq find-file-visit-truename t)
 (menu-bar-mode 0)
 
-(add-to-list 'load-path "~chuck/.emacs.d/elisp")
+(add-to-list 'load-path "~/.emacs.d/elisp")
 (require 'scala-mode-auto)
 (require 'cl)
 (require 'ido)
