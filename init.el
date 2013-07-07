@@ -18,7 +18,7 @@
 (setq ido-everywhere t)
 (ido-mode t)
 (setq column-number-mode t)
-(setq inhibit-startup-message t)
+;(setq inhibit-startup-message t)
 (setq save-abbrevs nil)
 (setq show-trailing-whitespace t)
 (setq suggest-key-bindings t)
