@@ -64,9 +64,7 @@
 (global-set-key (kbd "C-S-P") 'scroll-down-1)
 (global-set-key (kbd "C-X #") 'linum-mode)
 
-;; ---------------------------
 ;; -- JS Mode configuration --
-;; ---------------------------
 (load "defuns-config.el")
 (load "js-config.el")
 (add-to-list 'load-path "~/.emacs.d/elisp/jade-mode") ;; github.com/brianc/jade-mode
@@ -74,3 +72,10 @@
 (require 'jade-mode)
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
+
+;; org-mode
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(add-hook 'org-mode-hook 'turn-on-font-lock)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
