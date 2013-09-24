@@ -73,6 +73,7 @@
 (add-to-list 'auto-mode-alist '("\\.styl$" . sws-mode))
 (add-to-list 'auto-mode-alist '("\\.jade$" . jade-mode))
 (add-to-list 'auto-mode-alist '("\\.g4$" . antlr-mode))
+(add-to-list 'auto-mode-alist '("\\.xsd$" . xml-mode))
 
 ;; org-mode
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
