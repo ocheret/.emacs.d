@@ -13,3 +13,4 @@ make.out.*
 tmp/
 Build/
 auto-save-list/
+elpa/
