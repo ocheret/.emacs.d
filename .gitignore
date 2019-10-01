@@ -10,6 +10,7 @@ make.out.*
 *.gif
 *.jpg
 *.ppm
+ido.last
 tmp/
 Build/
 auto-save-list/
