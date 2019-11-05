@@ -93,6 +93,23 @@
   (setq tab-width 4 indent-tabs-mode 1))
 (add-hook 'go-mode-hook 'my-go-mode-hook)
 
+(defun set-exec-path-from-shell-PATH ()
+  (let ((path-from-shell (replace-regexp-in-string
+                          "[ \t\n]*$"
+                          ""
+                          (shell-command-to-string
+                           "$SHELL --login -i -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq eshell-path-env path-from-shell) ; for eshell users
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+(when window-system (set-exec-path-from-shell-PATH))
+
+;(add-to-list 'exec-path "/Users/tleyden/Development/gocode/bin")
+(add-hook 'before-save-hook 'gofmt-before-save)
+
+;(setenv "GOPATH" "/Users/tleyden/Development/gocode")
+
 ;; Rust w/ racer - see https://github.com/racer-rust/emacs-racer
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
@@ -112,7 +129,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (company racer rust-mode go-playground go-mode))))
+ '(package-selected-packages
+   (quote
+    (exec-path-from-shell go company racer rust-mode go-playground go-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
